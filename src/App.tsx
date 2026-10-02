@@ -54,15 +54,13 @@ const MainApp: React.FC = () => {
       const hash = window.location.hash.toLowerCase();
       const search = window.location.search.toLowerCase();
 
-      if (path.includes('/admin') || hash.includes('admin') || search.includes('admin') || search.includes('view=admin')) {
-        return 'admin';
-      }
+      if (path.includes('/admin') || hash.includes('admin') || search.includes('admin')) return 'admin';
+      if (path.includes('/login') || hash.includes('login') || search.includes('login')) return 'login';
       if (path.includes('/menu') || hash.includes('menu') || search.includes('menu')) return 'menu';
       if (path.includes('/about') || hash.includes('about') || search.includes('about')) return 'about';
       if (path.includes('/gallery') || hash.includes('gallery') || search.includes('gallery')) return 'gallery';
       if (path.includes('/contact') || hash.includes('contact') || search.includes('contact')) return 'contact';
       if (path.includes('/checkout') || hash.includes('checkout') || search.includes('checkout')) return 'checkout';
-      if (path.includes('/login') || hash.includes('login') || search.includes('login')) return 'login';
       if (path.includes('/profile') || hash.includes('profile') || search.includes('profile')) return 'profile';
       if (path.includes('/order-tracking') || hash.includes('order-tracking')) return 'order-tracking';
     } catch {}
@@ -125,10 +123,9 @@ const MainApp: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     try {
       if (view === 'home') {
-        const cleanPath = window.location.pathname.includes('/admin') ? '/' : window.location.pathname;
-        window.history.pushState({ view }, '', cleanPath);
+        window.history.pushState({ view }, '', '/');
       } else {
-        window.history.pushState({ view }, '', `#${view}`);
+        window.history.pushState({ view }, '', `/${view}`);
       }
     } catch {}
   };
