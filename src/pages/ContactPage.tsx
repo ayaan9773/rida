@@ -140,7 +140,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ settings }) => {
         </div>
 
         {/* Embedded Map iFrame with Decorative Card Overlay */}
-        <div className="relative rounded-2xl overflow-hidden border border-[#ded3c3] shadow-inner bg-[#f2eae0] aspect-16/9 sm:aspect-21/9 min-h-[320px]">
+        <div className="relative w-full max-w-full rounded-2xl overflow-hidden border border-[#ded3c3] shadow-inner bg-[#f2eae0] aspect-4/3 sm:aspect-21/9 min-h-[300px]">
           <iframe
             title="Gulf Spring Cafe Location Map"
             src={mapEmbedUrl}
@@ -150,11 +150,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ settings }) => {
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full min-h-[320px]"
+            className="w-full h-full min-h-[300px] object-cover"
           />
 
           {/* Floating Location Overlay Badge */}
-          <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-[#2c1d11]/95 text-white backdrop-blur-md p-4 rounded-2xl shadow-xl border border-amber-900/40 max-w-sm space-y-1.5 pointer-events-auto">
+          <div className="absolute bottom-3 left-3 right-3 sm:left-4 sm:right-auto bg-[#2c1d11]/95 text-white backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-xl border border-amber-900/40 max-w-sm space-y-1.5 pointer-events-auto">
             <div className="flex items-center justify-between gap-2">
               <span className="font-serif font-bold text-sm text-amber-200">
                 {isRTL ? settings.name_ar : settings.name_en}
