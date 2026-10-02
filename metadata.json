@@ -1,0 +1,6 @@
+{
+  "name": "Gulf Spring | نبع الدرعيه - Cafe & Tea in Diriyah",
+  "description": "Authentic specialty coffee, traditional tea, and cozy evening bonfire moments in historic Diriyah, Riyadh, Saudi Arabia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

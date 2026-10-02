@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-arabic: 'Cairo', 'Tajawal', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+  }
+
+  [dir="rtl"] {
+    font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+  }
+
+  [dir="ltr"] {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom animations & polish */
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.9; }
+  50% { transform: scale(1.05) rotate(1deg); opacity: 1; }
+}
+
+.animate-flame {
+  animation: flameFlicker 3s ease-in-out infinite;
+}
+
+/* Hide scrollbar for carousel/tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print styles for receipts */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt, #printable-receipt * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
