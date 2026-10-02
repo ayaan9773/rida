@@ -54,7 +54,7 @@ const MainApp: React.FC = () => {
       const hash = window.location.hash.toLowerCase();
       const search = window.location.search.toLowerCase();
 
-      if (path.includes('/admin') || hash.includes('admin') || search.includes('admin')) {
+      if (path.includes('/admin') || hash.includes('admin') || search.includes('admin') || search.includes('view=admin')) {
         return 'admin';
       }
       if (path.includes('/menu') || hash.includes('menu') || search.includes('menu')) return 'menu';
